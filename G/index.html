@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#f2f0e9">
+		<meta name="description" content="Réservez une séance et découvrez les articles de sport Atelier Forme.">
+		<title>Atelier Forme | Votre salle, votre rythme</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/style.css">
+		<script src="/mana.min.js" defer></script>
+	</head>
+	<body>
+		<header class="topbar">
+			<a class="brand" href="#accueil" aria-label="Atelier Forme, accueil"><span class="brand-mark" aria-hidden="true">AF</span><span>ATELIER<br>FORME</span></a>
+			<nav class="main-nav" aria-label="Navigation principale">
+				<a href="#accueil" data-nav="accueil">Accueil</a>
+				<a href="#reservation" data-nav="reservation">Réservation</a>
+				<a href="#abonnements" data-nav="abonnements">Abonnements</a>
+				<a href="#boutique" data-nav="boutique">Boutique</a>
+			</nav>
+			<a class="admin-link" href="#administration" data-nav="administration">Espace propriétaire <span aria-hidden="true">↗</span></a>
+		</header>
+		<main>
+			<section class="page home-page" id="accueil" data-page="accueil">
+				<div class="hero">
+					<div class="hero-copy">
+						<p class="eyebrow"><span class="live-dot"></span> SALLE OUVERTE · 7 JOURS SUR 7</p>
+						<h1>Le mouvement<br>vous va <em>bien.</em></h1>
+						<p class="hero-lede">Un espace pour progresser à votre rythme. Réservez votre prochaine séance ou trouvez la formule qui vous ressemble.</p>
+						<div class="hero-actions"><a class="button button-dark" href="#reservation">Réserver une séance <span aria-hidden="true">↗</span></a><a class="text-link" href="#boutique">Voir la boutique <span aria-hidden="true">→</span></a></div>
+						<div class="hero-footnote"><span>01 / 03</span><span>BOUGER · RESPIRER · RECOMMENCER</span></div>
+					</div>
+					<div class="hero-art" role="img" aria-label="Salle de sport lumineuse équipée pour l'entraînement">
+						<div class="art-label"><span>UN ESPACE POUR VOUS</span><strong>ENTRAÎNEZ-VOUS<br>À VOTRE FAÇON.</strong></div>
+						<div class="art-stamp" aria-hidden="true">MOVE<br>YOUR<br>WAY</div><span class="art-index">48°51' N · 2°21' E</span>
+					</div>
+				</div>
+				<div class="home-details">
+					<div><span class="detail-number">01</span><h2>Simple de<br>commencer.</h2></div>
+					<p>Choisissez un créneau, indiquez vos coordonnées, et votre demande arrive directement à la salle. Nous vous recontactons pour confirmer.</p>
+					<a class="round-link" href="#reservation" aria-label="Aller à la réservation">↗</a>
+					<div class="detail-hours"><span>HORAIRES</span><strong>Lun — Dim<br>06:00 — 22:00</strong></div>
+				</div>
+			</section>
+
+			<section class="page form-page" id="reservation" data-page="reservation" hidden>
+				<div class="section-heading"><p class="eyebrow">VOTRE PROCHAINE SÉANCE</p><h1>On se retrouve<br><em>quand ?</em></h1><p>Choisissez votre activité et votre créneau. La salle vous contactera pour confirmer la réservation.</p></div>
+				<form class="request-form" id="reservation-form">
+					<div class="form-heading"><span>01</span><h2>Vos coordonnées</h2></div>
+					<div class="field-grid">
+						<label>Prénom<input name="firstName" autocomplete="given-name" maxlength="80" required></label>
+						<label>Nom<input name="lastName" autocomplete="family-name" maxlength="80" required></label>
+						<label>Âge<input name="age" type="number" min="1" max="120" inputmode="numeric" required></label>
+						<label>E-mail<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+						<label class="full-field">Téléphone <span class="optional">(facultatif)</span><input name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+					</div>
+					<div class="form-heading next-heading"><span>02</span><h2>Votre séance</h2></div>
+					<div class="field-grid">
+						<label>Activité ou abonnement<select name="service" required><option value="">Choisir une formule</option><option value="Accès libre">Accès libre</option><option value="Cours collectif">Cours collectif</option><option value="Coaching individuel">Coaching individuel</option><option value="Abonnement Essentiel">Abonnement Essentiel</option><option value="Abonnement Studio">Abonnement Studio</option><option value="Abonnement Intense">Abonnement Intense</option></select></label>
+						<label>Date<input name="date" type="date" required></label><label>Heure<input name="time" type="time" required></label>
+					</div>
+					<p class="form-error" id="reservation-error" role="alert" hidden></p>
+					<button class="button button-dark submit-button" type="submit">Envoyer ma demande <span aria-hidden="true">↗</span></button>
+					<p class="form-note">Votre demande sera confirmée par la salle. Aucun paiement n’est demandé ici.</p>
+				</form>
+			</section>
+
+			<section class="page form-page subscriptions-page" id="abonnements" data-page="abonnements" hidden>
+				<div class="section-heading"><p class="eyebrow">LES ABONNEMENTS ATELIER FORME</p><h1>Votre rythme.<br><em>Votre formule.</em></h1><p>Choisissez l’abonnement qui accompagne vos objectifs. Nous vous recontactons pour valider votre inscription.</p></div>
+				<div class="subscription-content">
+					<div class="plans subscription-plans" aria-label="Formules d'abonnement">
+						<article class="plan subscription-card"><span class="plan-number">01 / SOUPLE</span><h2>Essentiel</h2><p>Un accès simple pour garder le mouvement au quotidien.</p><strong data-price="19600">19 600 FCFA <span>/ mois</span></strong><a class="button button-dark" data-plan="Abonnement Essentiel" href="#reservation">Choisir Essentiel <span aria-hidden="true">↗</span></a></article>
+						<article class="plan subscription-card featured-plan"><span class="plan-number">02 / ÉQUILIBRE</span><h2>Studio</h2><p>Accès libre et cours collectifs pour progresser régulièrement.</p><strong data-price="32800">32 800 FCFA <span>/ mois</span></strong><a class="button button-dark" data-plan="Abonnement Studio" href="#reservation">Choisir Studio <span aria-hidden="true">↗</span></a></article>
+						<article class="plan subscription-card"><span class="plan-number">03 / COMPLET</span><h2>Intense</h2><p>Un accompagnement complet avec coaching individuel inclus.</p><strong data-price="52400">52 400 FCFA <span>/ mois</span></strong><a class="button button-dark" data-plan="Abonnement Intense" href="#reservation">Choisir Intense <span aria-hidden="true">↗</span></a></article>
+					</div>
+					<p class="form-note subscription-note">Les tarifs sont affichés en FCFA, toutes taxes comprises. Aucun paiement en ligne n’est demandé ici.</p>
+				</div>
+			</section>
+
+			<section class="page form-page shop-page" id="boutique" data-page="boutique" hidden>
+				<div class="section-heading"><p class="eyebrow">LA BOUTIQUE ATELIER FORME</p><h1>Bien équipé.<br><em>Prêt à bouger.</em></h1><p>Retrouvez notre sélection d’articles pour vos entraînements. Choisissez votre article et envoyez votre commande.</p></div>
+				<div class="plans" aria-label="Articles de sport">
+					<article class="plan product-card"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Chaussure de sport rouge"><span class="plan-number">01 / RUNNING</span><h2>Chaussures de sport</h2><p>Légères et confortables pour vos séances de course.</p><strong data-price="49200">49 200 FCFA <span>/ paire</span></strong></article>
+					<article class="plan product-card"><img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=80" alt="Gourde réutilisable"><span class="plan-number">02 / HYDRATATION</span><h2>Gourde sport</h2><p>Une gourde réutilisable pour rester hydraté.</p><strong data-price="11800">11 800 FCFA <span>/ pièce</span></strong></article>
+					<article class="plan product-card"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80" alt="Entraînement en salle de sport"><span class="plan-number">03 / ENTRAÎNEMENT</span><h2>Corde à sauter</h2><p>Un accessoire pratique pour le cardio et l’échauffement.</p><strong data-price="9800">9 800 FCFA <span>/ pièce</span></strong></article>
+					<article class="plan product-card"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="Sac à dos de sport"><span class="plan-number">04 / ÉQUIPEMENT</span><h2>Sac de sport</h2><p>Emportez vos affaires et votre tenue d’entraînement.</p><strong data-price="25600">25 600 FCFA <span>/ pièce</span></strong></article>
+				</div>
+				<form class="request-form purchase-form" id="purchase-form">
+					<div class="form-heading"><span>01</span><h2>Commander un article</h2></div>
+					<div class="field-grid">
+						<label>Prénom<input name="firstName" autocomplete="given-name" maxlength="80" required></label>
+						<label>Nom<input name="lastName" autocomplete="family-name" maxlength="80" required></label>
+						<label>Âge<input name="age" type="number" min="1" max="120" inputmode="numeric" required></label>
+						<label>E-mail<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+						<label class="full-field">Téléphone <span class="optional">(facultatif)</span><input name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+						<label>Article<select name="product" required><option value="">Choisir un article</option><option value="shoes">Chaussures de sport · 49 200 FCFA</option><option value="bottle">Gourde sport · 11 800 FCFA</option><option value="rope">Corde à sauter · 9 800 FCFA</option><option value="bag">Sac de sport · 25 600 FCFA</option></select></label>
+						<label>Quantité<input name="quantity" type="number" min="1" max="10" value="1" inputmode="numeric" required></label>
+					</div>
+					<p class="form-error" id="purchase-error" role="alert" hidden></p>
+					<button class="button button-dark submit-button" type="submit">Envoyer ma commande <span aria-hidden="true">↗</span></button>
+					<p class="form-note">La commande ne déclenche pas de paiement en ligne. La salle vous recontactera pour la finaliser.</p>
+				</form>
+			</section>
+
+			<section class="page confirmation-page" data-page="confirmation" hidden>
+				<div class="confirmation-mark" aria-hidden="true">✓</div><p class="eyebrow">DEMANDE BIEN REÇUE</p>
+				<h1>Merci, <em id="confirmation-name">à bientôt.</em></h1>
+				<p class="confirmation-copy" id="confirmation-copy">Votre demande a bien été transmise à la salle.</p>
+				<a class="button button-dark" href="#accueil">Retour à l’accueil <span aria-hidden="true">↗</span></a>
+			</section>
+
+			<section class="page admin-page" id="administration" data-page="administration" hidden>
+				<div class="admin-intro"><p class="eyebrow">GESTION PRIVÉE</p><h1>Espace<br><em>propriétaire.</em></h1><p>Consultez séparément les demandes de réservation et les commandes reçues.</p></div>
+				<form class="login-form" id="login-form">
+					<div class="form-heading"><span aria-hidden="true">Connexion</span><h2>Propriétaire</h2></div>
+					<label>Identifiant<input name="username" autocomplete="username" required></label>
+					<label>Mot de passe<input name="password" type="password" autocomplete="current-password" required></label>
+					<p class="form-error" id="login-error" role="alert" hidden></p>
+					<button class="button button-dark submit-button" type="submit">Se connecter <span aria-hidden="true">↗</span></button>
+				</form>
+				<div class="admin-dashboard" id="admin-dashboard" hidden>
+					<div class="dashboard-top"><div><p class="eyebrow">VUE D’ENSEMBLE</p><h2>Demandes reçues</h2></div><button class="text-button" id="logout-button" type="button">Déconnexion ↗</button></div>
+					<div class="dashboard-tabs" role="tablist" aria-label="Type de demande">
+						<button class="dashboard-tab is-active" type="button" role="tab" aria-selected="true" data-list="reservations">Réservations <span id="reservation-count">0</span></button>
+						<button class="dashboard-tab" type="button" role="tab" aria-selected="false" data-list="purchases">Commandes <span id="purchase-count">0</span></button>
+					</div>
+					<p class="form-error" id="dashboard-error" role="alert" hidden></p>
+					<div class="table-wrap"><table><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
+					<p class="empty-state" id="empty-state" hidden>Aucune demande pour le moment.</p>
+				</div>
+			</section>
+		</main>
+		<footer class="site-footer">
+			<a class="brand footer-brand" href="#accueil"><span class="brand-mark" aria-hidden="true">AF</span><span>ATELIER<br>FORME</span></a>
+			<p>Le mouvement vous va bien.</p><a href="#administration">Accès propriétaire <span aria-hidden="true">↗</span></a>
+			<span class="footer-copy">© 2026 ATELIER FORME</span>
+		</footer>
+	</body>
+</html>
